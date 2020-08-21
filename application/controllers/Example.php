@@ -19,7 +19,7 @@ class Example extends CI_Controller
 		$data['message'] = 'This message was sent at ' . date('Y-m-d H:i:s');
 
 		// Send message
-		$event = $pusher->trigger('test_channel', 'my_event', $data);
+		$event = $pusher->trigger('my-channel', 'my-event', $data);
 
 		if ($event === TRUE)
 		{

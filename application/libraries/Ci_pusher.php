@@ -1,5 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
+use Pusher\Pusher;
+
 /**
  * Pusher for CodeIgniter
  *
@@ -16,8 +18,13 @@
  * @license     MIT
  * @link        https://github.com/darkwhispering/pusher-for-codeigniter
  * @version     2.0.0
+ *
+ * @updated_by	Jeffri Junianto S
+ * @link        https://github.com/pepypeppep/pusher-for-codeigniter
+ * @version     4.0.0
  */
 
+require_once APPPATH."vendor/pusher/pusher-php-server/src/Pusher.php";
 Class Ci_pusher
 {
 
@@ -30,13 +37,13 @@ Class Ci_pusher
         $app_id     = $this->config->item('pusher_app_id');
         $app_key    = $this->config->item('pusher_app_key');
         $app_secret = $this->config->item('pusher_app_secret');
-        $options    = $this->options();
+        $cluster    = ['cluster' => $this->config->item('pusher_app_cluster')];
 
         // Create Pusher object only if we don't already have one
         if (!isset($this->pusher))
         {
             // Create new Pusher object
-            $this->pusher = new Pusher($app_key, $app_secret, $app_id, $options);
+            $this->pusher = new Pusher($app_key, $app_secret, $app_id, $cluster);
             log_message('debug', 'CI Pusher library loaded');
 
             // Set logger if debug is set to true

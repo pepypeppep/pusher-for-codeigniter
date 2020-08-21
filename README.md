@@ -1,6 +1,4 @@
-![Not maintained](https://img.shields.io/badge/maintained%3F-no!-red.svg?style=flat)
-
-**This library is no longer activly maintained or updated. It might still work, but use at your own risk.**
+I just make small update for this awesome library, so everyone can use this library in their project again with easy configuration.
 
 # Pusher PHP SDK for CodeIgniter
 
@@ -31,6 +29,11 @@ $pusher->trigger('test_channel', 'my_event', array('message' => 'Hello World'));
 More detailed documentation can be found in [Pusher PHP SDK documentation](https://github.com/pusher/pusher-http-php#publishingtriggering-events)
 
 ## Changelog
+##### v4.0.0 - August 2020
+- Updated example code.
+- Updated pusher library version.
+- Pusher library adjustment with new version.
+
 ##### v2.0.0 - June 2015
 - Created new function that returns the Pusher object.
 - Removed all of the duplicated Pusher function used in previous version.
